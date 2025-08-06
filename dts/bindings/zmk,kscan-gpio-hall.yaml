@@ -1,0 +1,43 @@
+# Copyright (c) 2024, Pete Johanson
+# SPDX-License-Identifier: MIT
+
+description: Hall Sensor GPIO keyboard KSCAN controller
+
+compatible: "zmk,kscan-gpio-hall"
+
+include: kscan.yaml
+
+properties:
+  columns:
+    type: int
+    default: 1
+    required: false
+  rows:
+    type: int
+    default: 1
+    required: false
+  min_trigger_value:
+    type: int
+    default: 10
+    required: false
+    description: Minimum delta from idle to begin detecting key press activity.
+  max_trigger_value:
+    type: int
+    default: 90
+    required: false
+    description: Maximum delta from idle; inputs above this are treated as invalid.
+  trigger_value:
+    type: int
+    default: 70
+    required: true
+    description: Delta from idle that must be exceeded to register a key press.
+  init_range:
+    type: int
+    default: 200
+    required: false
+    description: Initial virtual range used before calibration to prevent false triggering; acts as a temporary baseline delta.
+  idle_steps:
+    type: int
+    default: 3
+    required: false
+    description: Number of measurements averaged to calculate the idle value baseline.

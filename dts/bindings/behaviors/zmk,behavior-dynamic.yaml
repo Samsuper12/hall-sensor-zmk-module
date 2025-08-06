@@ -1,0 +1,26 @@
+# Copyright (c) 2025 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: Dynamic Behavior
+
+compatible: "zmk,behavior-dynamic"
+
+include: two_param.yaml
+
+properties:
+  bindings:
+    type: phandle-array
+    required: true
+  trigger_values:
+    type: array
+    required: false
+  rapid_trigger:
+    type: boolean
+    required: false
+  repeat_keycode:
+    type: boolean
+    required: false
+  repeat_delay:
+    type: int
+    required: false
+    default: 0

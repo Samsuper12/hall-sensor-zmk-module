@@ -1,0 +1,3 @@
+name: zmk_hall_sensor
+append:
+  EXTRA_CONF_FILE: zmk_hall_sensor.conf
