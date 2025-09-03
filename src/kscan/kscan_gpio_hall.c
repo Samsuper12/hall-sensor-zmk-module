@@ -206,11 +206,11 @@ static int kscan_hall_read(const struct device *dev) {
 
     uint64_t currentTime = k_uptime_get();
 
-    if ((currentTime - data->scan_time) > 10) {
-      data->scan_time = k_uptime_get();
+    // if ((currentTime - data->scan_time) > 10) {
+    //  data->scan_time = k_uptime_get();
 
-      LOG_ERR("range: %i, value%i", value, state->last_value);
-    }
+    // LOG_ERR("range: %i, value%i", value, state->last_value);
+    // }
 
     if (value >= config->max_trigger_value) {
       continue;
